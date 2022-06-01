@@ -1,3 +1,4 @@
+import 'package:chesa_app/ui/pages/jadwal_obat.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -10,38 +11,48 @@ class fitur_card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      height: 323,
-      margin: EdgeInsets.only(left: defaultMargin),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(18),
-        color: kWhiteColor,
-      ),
-      child: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.only(top: 10, bottom: 20),
-            width: 180,
-            height: 220,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(imageurl),
-              ),
-              borderRadius: BorderRadius.circular(17),
-            ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => jadwalobat(),
           ),
-          Container(
-            child: Text(
-              name,
-              style: blackTextStyle.copyWith(
-                fontSize: 18,
-                fontWeight: medium,
+        );
+      },
+      child: Container(
+        width: 200,
+        height: 323,
+        margin: EdgeInsets.only(left: defaultMargin),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          color: kWhiteColor,
+        ),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 10, bottom: 20),
+              width: 180,
+              height: 220,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imageurl),
+                ),
+                borderRadius: BorderRadius.circular(17),
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-        ],
+            Container(
+              child: Text(
+                name,
+                style: blackTextStyle.copyWith(
+                  fontSize: 18,
+                  fontWeight: medium,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

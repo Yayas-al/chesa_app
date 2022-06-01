@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashPage(),
         '/get-started': (context) => GetStartedPage(),
+        // ignore: prefer_const_constructors
         '/dashboard': (context) => dasboard(),
         '/chesa': (context) => chesa(),
       },
