@@ -1,4 +1,6 @@
+import 'package:chesa_app/ui/pages/dasboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shared/theme.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -12,7 +14,7 @@ class GetStartedPage extends StatelessWidget {
           ClipPath(
             clipper: Myclipper(),
             child: Container(
-              height: 510,
+              height: 510.h,
               width: double.infinity,
               color: kPrimaryColor,
               child: Stack(children: [
@@ -35,27 +37,27 @@ class GetStartedPage extends StatelessWidget {
                 Text(
                   'Your  bot health secertary ',
                   style: blackTextStyle.copyWith(
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: bold,
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 20.h,
                 ),
                 Text(
                   'Kenali gejala awal penyakit anda dengan\n robot pintar ',
                   style: blackTextStyle.copyWith(
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     fontWeight: light,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 Container(
-                  height: 40,
-                  width: 232,
+                  height: 40.h,
+                  width: 232.w,
                   margin: EdgeInsets.only(
-                    top: 50,
-                    bottom: 57,
+                    top: 50.h,
+                    bottom: 57.h,
                   ),
                   child: TextButton(
                     onPressed: () {
@@ -70,7 +72,7 @@ class GetStartedPage extends StatelessWidget {
                     child: Text(
                       'Start',
                       style: blackTextStyle.copyWith(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: reguler,
                       ),
                     ),

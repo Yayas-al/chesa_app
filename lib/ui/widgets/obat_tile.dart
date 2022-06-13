@@ -1,5 +1,6 @@
 import 'package:chesa_app/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Obatjadwal extends StatelessWidget {
   final String nameobat;
@@ -11,21 +12,21 @@ class Obatjadwal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        top: 16,
+        top: ScreenUtil().setHeight(15),
       ),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: kWhiteColor,
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(18.r),
       ),
       child: Row(
         children: [
           Container(
-            height: 50,
-            width: 50,
-            margin: EdgeInsets.only(right: 45),
+            height: ScreenUtil().setHeight(50),
+            width: ScreenUtil().setWidth(50),
+            margin: EdgeInsets.only(right: ScreenUtil().setHeight(45)),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(18.r),
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage('assets/noto_pill.png'),
@@ -36,8 +37,8 @@ class Obatjadwal extends StatelessWidget {
             children: [
               Text(
                 nameobat,
-                style:
-                    blackTextStyle.copyWith(fontSize: 14, fontWeight: reguler),
+                style: blackTextStyle.copyWith(
+                    fontSize: 14.sp, fontWeight: reguler),
               ),
             ],
           ),
@@ -47,7 +48,7 @@ class Obatjadwal extends StatelessWidget {
                 Text(
                   waktu,
                   style: blackTextStyle.copyWith(
-                      fontSize: 14, fontWeight: reguler),
+                      fontSize: 14.sp, fontWeight: reguler),
                 ),
               ],
             ),

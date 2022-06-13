@@ -33,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
               height: 277.15,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/icon_spalsh.png'),
+                  image: AssetImage('assets/Chesa.png'),
                 ),
               ),
             ),

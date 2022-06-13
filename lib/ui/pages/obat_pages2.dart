@@ -1,19 +1,18 @@
-import 'package:chesa_app/models/artikel_models.dart';
-import 'package:chesa_app/ui/pages/artikel_details.dart';
+import 'package:chesa_app/models/obat_model.dart';
+import 'package:chesa_app/ui/pages/obat_detail_pages.dart';
 import 'package:flutter/material.dart';
-import '../../shared/theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../shared/theme.dart';
 
-class artikelpages2 extends StatefulWidget {
-  artikelpages2({Key? key}) : super(key: key);
+class obatpages2 extends StatefulWidget {
+  const obatpages2({Key? key}) : super(key: key);
 
   @override
-  State<artikelpages2> createState() => _artikelpages2State();
+  State<obatpages2> createState() => _obatpages2State();
 }
 
-class _artikelpages2State extends State<artikelpages2> {
-  //mengambil data dari artikel model ke list
-  List<artikel> artikels = artikelList;
+class _obatpages2State extends State<obatpages2> {
+  List<obatModel> drug = obatList;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -71,7 +70,7 @@ class _artikelpages2State extends State<artikelpages2> {
                                 borderSide: BorderSide.none),
                             hintText: "eg : Covid-19",
                             prefixIcon: Icon(Icons.search)),
-                        onChanged: searchArtikel,
+                        onChanged: searchObat,
                       ),
                     ),
                   ],
@@ -83,44 +82,39 @@ class _artikelpages2State extends State<artikelpages2> {
       );
     }
 
-    Widget List() {
+    Widget obatlist() {
       return Container(
-        margin: EdgeInsets.only(top: size.height * .30),
+        margin: EdgeInsets.only(top: size.height * .25),
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                child: Expanded(
-                  child: ListView.builder(
-                      itemCount: artikels.length,
-                      itemBuilder: (context, index) {
-                        final artikel = artikels[index];
-                        return Card(
-                          child: ListTile(
-                            title: Text(artikel.artikel_title),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => artikelDetail(
-                                    articels: artikel,
-                                  ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: drug.length,
+                    itemBuilder: (context, index) {
+                      final obatModel = drug[index];
+                      return Card(
+                        child: ListTile(
+                          title: Text(obatModel.obat_title),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => obatDetail(
+                                  obat: obatModel,
                                 ),
-                              );
-                            },
-                            leading: Image.network(
-                              artikel.artikel_imageurls,
-                              height: 40.h,
-                              width: 40.w,
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                        );
-                      }),
-                ),
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    }),
               ),
             ],
           ),
@@ -134,21 +128,18 @@ class _artikelpages2State extends State<artikelpages2> {
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: Stack(children: <Widget>[
-        header(),
-        List(),
-      ]),
+      body: Stack(children: <Widget>[header(), obatlist()]),
     );
   }
 
-  void searchArtikel(String query) {
+  void searchObat(String query) {
     // ignore: avoid_types_as_parameter_names
-    final suggestions = artikelList.where((artikels) {
-      final artikelTitle = artikels.artikel_title.toLowerCase();
+    final suggestions = obatList.where((obat) {
+      final obatTitle = obat.obat_title.toLowerCase();
       final input = query.toLowerCase();
 
-      return artikelTitle.contains(input);
+      return obatTitle.contains(input);
     }).toList();
-    setState(() => artikels = suggestions);
+    setState(() => drug = suggestions);
   }
 }

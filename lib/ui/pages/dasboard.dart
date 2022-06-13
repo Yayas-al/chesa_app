@@ -1,8 +1,8 @@
 import 'package:chesa_app/models/obat_model.dart';
 import 'package:chesa_app/ui/pages/artikel-pages2.dart';
-import 'package:chesa_app/ui/pages/artikel_pages.dart';
-import 'package:chesa_app/ui/pages/obat_pages.dart';
 import 'package:chesa_app/ui/pages/jadwal_obat.dart';
+import 'package:chesa_app/ui/pages/obat_pages2.dart';
+import 'package:chesa_app/ui/pages/tanda_vital.dart';
 import 'package:chesa_app/ui/widgets/cardfitur.dart';
 import 'package:chesa_app/ui/widgets/obat_tile.dart';
 import 'package:flutter/material.dart';
@@ -183,7 +183,7 @@ class dasboard extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => obatPage(),
+                      builder: (context) => obatpages2(),
                     ),
                   );
                 },
@@ -195,7 +195,7 @@ class dasboard extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => artikelPages(),
+                      builder: (context) => artikelpages2(),
                     ),
                   );
                 },
@@ -207,7 +207,7 @@ class dasboard extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => artikelpages2(),
+                      builder: (context) => tandaVital(),
                     ),
                   );
                 },

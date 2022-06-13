@@ -2,6 +2,7 @@ import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 import '../widgets/obat_tile.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class jadwalobat extends StatelessWidget {
   const jadwalobat({Key? key}) : super(key: key);
@@ -10,13 +11,13 @@ class jadwalobat extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget obattile() {
       return Container(
-        margin: EdgeInsets.only(top: 20),
+        margin: EdgeInsets.only(top: ScreenUtil().setHeight(20)),
         child: Column(
           children: [
             Text(
               'Pagi',
-              style:
-                  blackTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
+              style: blackTextStyle.copyWith(
+                  fontSize: 18.sp, fontWeight: semiBold),
             ),
             Obatjadwal(
               nameobat: 'PARACETAMOL',
@@ -35,7 +36,7 @@ class jadwalobat extends StatelessWidget {
               waktu: '07:00',
             ),
             SizedBox(
-              height: 16,
+              height: ScreenUtil().setHeight(15),
             ),
             Text(
               'Siang',
@@ -55,12 +56,12 @@ class jadwalobat extends StatelessWidget {
               waktu: '12:00',
             ),
             SizedBox(
-              height: 16,
+              height: ScreenUtil().setHeight(15),
             ),
             Text(
               'Malam',
-              style:
-                  blackTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
+              style: blackTextStyle.copyWith(
+                  fontSize: 18.sp, fontWeight: semiBold),
             ),
             Obatjadwal(
               nameobat: 'PARACETAMOL',
@@ -87,13 +88,13 @@ class jadwalobat extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       appBar: AppBar(
         centerTitle: true,
-        toolbarHeight: 70,
+        toolbarHeight: ScreenUtil().setHeight(70),
         backgroundColor: kPrimaryColor,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
         title: Text(
           'Jadwal Minum Obat',
-          style: blackTextStyle.copyWith(fontSize: 18, fontWeight: reguler),
+          style: blackTextStyle.copyWith(fontSize: 18.sp, fontWeight: reguler),
         ),
       ),
       body: Column(
@@ -101,8 +102,8 @@ class jadwalobat extends StatelessWidget {
           Container(
             child: DatePicker(
               DateTime.now(),
-              height: 100,
-              width: 80,
+              height: ScreenUtil().setHeight(100),
+              width: ScreenUtil().setWidth(60),
               initialSelectedDate: DateTime.now(),
               selectionColor: kPrimaryColor,
               selectedTextColor: Colors.white,
@@ -113,17 +114,18 @@ class jadwalobat extends StatelessWidget {
             ),
           ),
           Container(
-            height: 620,
-            width: 396,
+            height: ScreenUtil().setHeight(570),
+            width: ScreenUtil().setWidth(396),
             padding: EdgeInsets.only(
-              left: 24,
-              right: 24,
+              left: ScreenUtil().setWidth(24),
+              right: ScreenUtil().setWidth(24),
             ),
-            margin: EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: ScreenUtil().setHeight(20)),
             decoration: BoxDecoration(
               color: kBackgorundColor,
               borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25), topRight: Radius.circular(25)),
+                  topLeft: Radius.circular(25.r),
+                  topRight: Radius.circular(25)),
             ),
             child: ListView(
               children: [
