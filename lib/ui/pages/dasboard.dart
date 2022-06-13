@@ -1,6 +1,10 @@
-import 'package:chesa_app/ui/pages/artikel.dart';
+import 'package:chesa_app/models/obat_model.dart';
+import 'package:chesa_app/ui/pages/artikel-pages2.dart';
+import 'package:chesa_app/ui/pages/artikel_pages.dart';
+import 'package:chesa_app/ui/pages/obat_pages.dart';
 import 'package:chesa_app/ui/pages/jadwal_obat.dart';
 import 'package:chesa_app/ui/widgets/cardfitur.dart';
+import 'package:chesa_app/ui/widgets/obat_tile.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -160,67 +164,53 @@ class dasboard extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              Container(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => artikelPage(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: 200,
-                    height: 323,
-                    margin: EdgeInsets.only(left: defaultMargin),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: kWhiteColor,
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 10, bottom: 20),
-                          width: 180,
-                          height: 220,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/jadwal.png'),
-                            ),
-                            borderRadius: BorderRadius.circular(17),
-                          ),
-                        ),
-                        Container(
-                          child: Text(
-                            'Jadwal konsumsi obat',
-                            style: blackTextStyle.copyWith(
-                              fontSize: 18,
-                              fontWeight: medium,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
               fitur_card(
-                name: 'Jadwal konsumsi obat',
+                name: 'Jadwal Konsumsi Obat',
                 imageurl: 'assets/jadwal.png',
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => jadwalobat(),
+                    ),
+                  );
+                },
               ),
               fitur_card(
                 name: 'Obat',
                 imageurl: 'assets/obat.png',
-              ),
-              fitur_card(
-                name: 'Tanda Vital',
-                imageurl: 'assets/vitalsign.png',
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => obatPage(),
+                    ),
+                  );
+                },
               ),
               fitur_card(
                 name: 'Artikel',
                 imageurl: 'assets/artikel.png',
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => artikelPages(),
+                    ),
+                  );
+                },
+              ),
+              fitur_card(
+                name: 'Tanda Vital',
+                imageurl: 'assets/vitalsign.png',
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => artikelpages2(),
+                    ),
+                  );
+                },
               ),
             ],
           ),

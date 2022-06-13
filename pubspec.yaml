@@ -40,6 +40,7 @@ dependencies:
   bubble: ^1.2.1
   table_calendar: ^3.0.6
   date_picker_timeline: ^1.2.3
+  flutter_screenutil: ^5.5.3+2
   
 
 dev_dependencies:
@@ -67,7 +68,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/
-     - assets/ChesaBot.json
+     - assets/ChesaGerd.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
