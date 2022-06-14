@@ -32,7 +32,7 @@ class _obatpages2State extends State<obatpages2> {
               width: ScreenUtil().setWidth(120),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/artikelbg2.png'))),
+                      image: AssetImage('assets/bg2detail.png'))),
             ),
             SafeArea(
               child: Padding(

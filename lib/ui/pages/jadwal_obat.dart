@@ -108,7 +108,7 @@ class jadwalobat extends StatelessWidget {
               selectionColor: kPrimaryColor,
               selectedTextColor: Colors.white,
               dateTextStyle: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.black),
             ),

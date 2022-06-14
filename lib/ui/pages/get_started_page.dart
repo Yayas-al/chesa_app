@@ -1,87 +1,89 @@
-import 'package:chesa_app/ui/pages/dasboard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shared/theme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: <Widget>[
-          ClipPath(
-            clipper: Myclipper(),
-            child: Container(
-              height: 510.h,
-              width: double.infinity,
-              color: kPrimaryColor,
-              child: Stack(children: [
-                Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/startimage.png'),
-                    ),
-                  ),
-                ),
-              ]),
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'Your  bot health secertary ',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 20.sp,
-                    fontWeight: bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Text(
-                  'Kenali gejala awal penyakit anda dengan\n robot pintar ',
-                  style: blackTextStyle.copyWith(
-                    fontSize: 14.sp,
-                    fontWeight: light,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Container(
-                  height: 40.h,
-                  width: 232.w,
-                  margin: EdgeInsets.only(
-                    top: 50.h,
-                    bottom: 57.h,
-                  ),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/dashboard');
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: kPrimaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(defaultRadius),
-                      ),
-                    ),
-                    child: Text(
-                      'Start',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 16.sp,
-                        fontWeight: reguler,
+    return ScreenUtilInit(
+      designSize: const Size(360, 800),
+      builder: (context, child) => Scaffold(
+        body: Column(
+          children: <Widget>[
+            ClipPath(
+              clipper: Myclipper(),
+              child: Container(
+                height: 510.h,
+                width: double.infinity,
+                color: kPrimaryColor,
+                child: Stack(children: [
+                  Container(
+                    height: double.infinity,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/startimage.png'),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ]),
+              ),
             ),
-          )
-        ],
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'Your  bot health secertary ',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 20.sp,
+                      fontWeight: bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Text(
+                    'Kenali gejala awal penyakit anda dengan\n robot pintar ',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 14.sp,
+                      fontWeight: light,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Container(
+                    height: 40.h,
+                    width: 232.w,
+                    margin: EdgeInsets.only(
+                      top: 50.h,
+                      bottom: 57.h,
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/dashboard');
+                      },
+                      style: TextButton.styleFrom(
+                        backgroundColor: kPrimaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(defaultRadius),
+                        ),
+                      ),
+                      child: Text(
+                        'Start',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 16.sp,
+                          fontWeight: reguler,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
