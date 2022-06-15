@@ -44,7 +44,7 @@ class _obatpages2State extends State<obatpages2> {
                       height: size.height * 0.03,
                     ),
                     Text(
-                      "ARTIKEL",
+                      "Obat-obatan",
                       style: blackTextStyle.copyWith(
                           fontSize: 19.sp, fontWeight: bold),
                     ),
@@ -52,12 +52,12 @@ class _obatpages2State extends State<obatpages2> {
                       height: ScreenUtil().setHeight(10),
                     ),
                     Text(
-                      "Temukan berbagai artikel tentang :\nKesehatan, Gaya Hidup, Tips ",
+                      "Temukan Berbagai jenis Obat-obatan \nbeserta kegunaan dan cara pemakaian \nyang di anjurkan ",
                       style: blackTextStyle.copyWith(
                           fontSize: 10.sp, fontWeight: reguler),
                     ),
                     SizedBox(
-                      height: size.height * .08,
+                      height: size.height * .06,
                     ),
                     SizedBox(
                       width: size.width * .5,

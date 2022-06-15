@@ -2,7 +2,6 @@ import 'package:chesa_app/models/obat_model.dart';
 import 'package:chesa_app/ui/pages/artikel-pages2.dart';
 import 'package:chesa_app/ui/pages/jadwal_obat.dart';
 import 'package:chesa_app/ui/pages/obat_pages2.dart';
-import 'package:chesa_app/ui/pages/tanda_vital.dart';
 import 'package:chesa_app/ui/widgets/cardfitur.dart';
 import 'package:chesa_app/ui/widgets/obat_tile.dart';
 import 'package:flutter/material.dart';
@@ -196,18 +195,6 @@ class dasboard extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => artikelpages2(),
-                    ),
-                  );
-                },
-              ),
-              fitur_card(
-                name: 'Tanda Vital',
-                imageurl: 'assets/vitalsign.png',
-                press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => tandaVital(),
                     ),
                   );
                 },
